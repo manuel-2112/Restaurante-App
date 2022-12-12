@@ -1,0 +1,45 @@
+<header>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+</header>
+
+  <body class="letra">
+    <section class="h-screen flex overflow-auto">
+      <div class="bg-white w-full p-6">
+        <h3 class="text-2xl mb-8">Chat en linea</h3>
+      <div class="bg-gray-100 w-9/12">
+        <div class="py-6 px-20 overflow-auto h-3/4">
+          <% @conversacion.receipts_for(current_user).each do |receipt| %>  
+            <% if receipt.message.sender.name == current_user.name %>
+              <div class="flex mb-12 flex-row-reverse">
+                <img src="<%= asset_path 'usuarios.png' %>" class=" self-end rounded-full w-12 mr-4">
+                <div class="flex-col">
+                  <div class="bg-blue-500 p-6 w-96 rounded-3xl rounded-br-none shadow-sm mb-2">
+                    <p class="mb-1 text-white"><%= receipt.message.sender.name %></p>
+                    <small class="text-white font-light"><%= receipt.message.body %></small>
+                  </div>
+                </div>
+              </div>
+            <% else %>
+              <div class="flex mb-12">
+                <img src="<%= asset_path 'usuarios.png' %>" class=" self-end rounded-full w-12 mr-4">
+                <div class="flex-col">
+                  <div class="bg-white p-6 w-96 rounded-3xl rounded-bl-none shadow-sm mb-2">
+                    <p class="mb-1"><%= receipt.message.sender.name %></p>
+                    <small class="text-gray-500 font-light"><%= receipt.message.body %></small>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <%= form_tag conversacione_mensajes_path(@conversacion), method: :post do %>
+          <div class="py-6 px-20 flex border-t">
+            <%=  text_area_tag :body %>
+            <!-- <input type="" class="px-4 py-2 bg-gray-100 w-full focus:outline-none font-light" placeholder="Escribe tu mensaje..."> -->
+            <%=  submit_tag %>
+          </div>
+        <% end %>
+      </div>
+    </section>
+  </body>

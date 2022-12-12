@@ -1,0 +1,93 @@
+<div class="container">
+<h1 align='center'><%= @car.marca %></h1>
+<br><br><br>
+
+<div class="position-absolute top-50 start-50 translate-middle">
+<div class="card" style="width: 40rem;">
+  <div class="card-header">
+    <%= @car.marca %>
+  </div>
+  <div class="card-body">
+    <p class="card-text"> Ingrediente: <%= @car.marca %> </p>
+    <p class="card-text"> Ubicación: <%= @car.modelo %> </p>
+    <p class="card-text"> Cantidad: <%= @car.año %> </p>
+    <p class="card-text"> Precio: <%= @car.precio %> </p>
+    <p class="card-text"> Nombre Proveedor: <%= @car.dueño %> </p>
+  </div>
+  <div class="card-footer text-muted">
+    <p class="card-text"><small class="text-muted">Creado en: <%= @car.created_at.strftime('%d/%m/%Y %I:%M') %></small></p>
+    <p class="card-text"><small class="text-muted">Actualizado en: <%= @car.updated_at.strftime('%d/%m/%Y %I:%M') %></small></p>
+    <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+      <div class="btn-group dropdown-center"  role="group">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Acciones
+        </button>
+        <ul class="dropdown-menu">
+        <% if (@car.user_id == current_user.id or current_user.admin == true)%>
+          <%= button_to "Editar", edit_car_path(:id => @car.id), :class => "dropdown-item", :method => :get %>
+        <% end %>
+        <% if ((@car.user_id != current_user.id and current_user.role == "Restaurant") or current_user.admin == true)%>
+          <%= button_to "Hacer Solicitud", new_car_ask_path(@car), :class => "dropdown-item", :method => :get %>
+        <% end %>
+        <% if (@car.user_id == current_user.id or current_user.admin == true)%>
+          <%= button_to "Eliminar", car_path(:id => @car.id), :class => "dropdown-item", :method => :get %>
+        <% end %>
+        </ul>
+      </div>
+      <div class="btn-group dropdown-center"  role="group">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Reseñas
+        </button>
+        <ul class="dropdown-menu">
+        <% if ((current_user.role == "Proveedor" and @car.user_id != current_user.id) or current_user.admin == true )%>
+          <%= button_to "Crear reseña", new_car_review_path(@car), :class => "dropdown-item", :method => :get %>
+        <% end %>
+        <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#Resenas">Leer reseñas</button></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+<div class="position-absolute bottom-0 start-50 translate-middle-x">
+<%= button_to "Volver al menu", cars_path, :class => "btn btn-outline-secondary", :method => :get %>
+<br><br><br>
+</div>
+
+
+<div class="modal fade modal-xl" id="Resenas" tabindex="-1" aria-hidden="true" style="">
+<div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Reseñas</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <table class="table table-borderless">
+      <thead>
+      <tr>
+      <th scope="col">Usuario</th>
+      <th scope="col">Contenido</th>
+      </tr>
+      </thead>
+      <tbody>
+        <% @car.reviews.each do |review| %>
+          <tr>
+            <th scope="row"><%= review.user.name %></th>
+            <td><%= review.contenido %></td>
+          </tr>
+        <% end %>
+      </tbody>
+      </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+

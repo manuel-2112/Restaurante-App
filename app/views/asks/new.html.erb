@@ -1,0 +1,35 @@
+<head>
+  <link rel="stylesheet" href="register_style.css">
+  <script src="https://kit.fontawesome.com/c497ad14fd.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="letra">
+<div class="formulario">
+<br>
+<h2 align='center'>Crear Solicitud:</h2>
+<h2 align='center'><%= @car.marca %></h2>
+
+<%= form_with model: [@car, Ask.new] do |c| %>
+    <div class="username">
+      <%= c.text_field :name %>
+      <label>Nombre Restaurant&nbsp;&nbsp;<i class="fa-regular"></i></label>
+    </div>
+    <div class="username">
+      <%= c.text_field :mail %>
+      <label>Dirección despacho&nbsp;&nbsp;<i class="fa-regular"></i></label>
+    </div>
+    <div class="username">
+        <%= c.text_field :dates %>
+        <label>Cantidad de kg por despacho&nbsp;&nbsp;<i class="fa-regular"></i></label>
+    </div>
+    <div class="username">
+        <%= c.text_field :reason %>
+        <label>Intervalo de días de despacho&nbsp;&nbsp;<i class="fa-regular"></i></label>
+    </div>
+    <div class="username">
+      <%= c.submit 'Hacer Solicitud' %>
+    </div>
+    <br>
+<% end %>
+</div>
+</body>

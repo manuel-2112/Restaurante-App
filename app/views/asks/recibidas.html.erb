@@ -1,0 +1,53 @@
+<h1 align='center'>Solicitudes Recibidas</h1><br>
+
+<% notice %>
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Auto</th>
+      <th>Año</th>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>Fechas del Arriendo</th>
+      <th>Motivo del Arriendo</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <% if current_user.admin == false %>
+      <% @owner_asks.each do |ask| %>
+      <tr>
+        <th scope="row"><%= ask.car.marca + " " + ask.car.modelo %></th>
+        <td><%= ask.car.año %></td>
+        <td><%= ask.name %></td>
+        <td><%= ask.mail %></td>
+        <td><%= ask.dates %></td>
+        <td><%= ask.reason %></td>
+        <td><%= link_to "Ver solicitud", ask_path(:id => ask.id) %></td>
+      </tr>
+      <% end %>
+    <% else %>
+      <% Ask.all.each do |ask| %>
+      <tr>
+        <th scope="row"><%= ask.car.marca + " " + ask.car.modelo %></th>
+        <td><%= ask.car.año %></td>
+        <td><%= ask.name %></td>
+        <td><%= ask.mail %></td>
+        <td><%= ask.dates %></td>
+        <td><%= ask.reason %></td>
+        <td><%= link_to "Ver solicitud", ask_path(:id => ask.id) %></td>
+        <% if ask.estado == 'ACEPTADO' %>
+          <td><%= link_to 'Finalizar arriendo', new_comentario_path %></td>
+        <% end %>
+      </tr>
+      
+      <% end %>
+    <% end %>
+
+</div>
+<div class="position-absolute bottom-0 start-50 translate-middle-x">
+<%= button_to "Volver", root_path, :class => "btn btn-outline-secondary", :method => :get %>
+<br><br><br>
+</div>
+

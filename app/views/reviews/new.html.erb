@@ -1,0 +1,25 @@
+<head>
+  <link rel="stylesheet" href="register_style.css">
+  <script src="https://kit.fontawesome.com/c497ad14fd.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="letra">
+ <div class="formulario">
+ <br>
+ <h2 align="center">Escribe una reseña</h2>
+<%= form_with model: [@car, Review.new] do |f| %>
+    <div class="username">
+      <%= f.text_field :contenido %> 
+      <label>Contenido&nbsp;&nbsp;<i class="fa-regular"></i></label>
+    </div>
+    <div class="username">
+      <%= f.text_field :clasificacion %>     
+      <label>Clasificacion&nbsp;&nbsp;<i class="fa-regular"></i></label>  
+    </div>
+    <div>
+        <%= f.submit %>
+    </div>
+    <br>
+<% end %>
+  </div>
+</body>

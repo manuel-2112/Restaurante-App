@@ -1,0 +1,33 @@
+
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="letra">
+<section class="h-screen flex-col overflow-scroll">
+  <h1 class="p-6"><strong>Todas las conversaciones</strong></h1>
+  <div class="container text-center">
+  <% @conversaciones.each do |conversacion| %>
+  <div class="row">
+  <div class="col">
+  <%= link_to conversacione_path(conversacion), :action => 'go' do %>
+  <div class="card">
+    <div class="card-header">
+      <img src="<%= asset_path 'usuarios.png' %>" class="rounded-full w-12 mr-4">
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <strong><%= conversacion.subject %></strong>
+      </blockquote>
+    </div>
+  </div>
+  <% end %>
+  </div>
+  </div>
+  <% end %>
+  </div>
+  </section>
+  <section align="center" class="p-6">
+    <%= button_to "Nueva Conversacion", new_conversacione_path, :class => "btn btn-outline-secondary", :method => :get %>
+  </section>
+</body>

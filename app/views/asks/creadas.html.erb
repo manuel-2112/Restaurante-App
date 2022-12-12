@@ -1,0 +1,69 @@
+<h1 align='center'>Solicitudes Creadas</h1><br>
+
+<% notice %>
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Ingredientes</th>
+      <th>Ubicación</th>
+      <th>Restaurante</th>
+      <th>Despacho</th>
+      <th>Cantidad de kg por despacho</th>
+      <th>Intervalo de días de despacho</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <% if current_user.admin == false %>
+      <% @user_asks.each do |ask| %>
+      <tr>
+        <th scope="row"><%= ask.car.marca %></th>
+        <td><%= ask.car.modelo %></td>
+        <td><%= ask.name %></td>
+        <td><%= ask.mail %></td>
+        <td><%= ask.dates %> kg</td>
+        <td><%= ask.reason %> días</td>
+        <% if ask.estado == 'PENDIENTE' %>
+          <td><span class="badge text-bg-warning"><%= ask.estado %></span></td>
+          <td><%= link_to "Editar", asks_edit_path(:id => ask.id) %></td>
+          <td><%= link_to "Eliminar", asks_delete_path(:id => ask.id), method: :get %></td>
+        <% elsif ask.estado == 'RECHAZADO' %>
+          <td><span class="badge text-bg-danger"><%= ask.estado %></span></td>
+          <td><%= link_to "Editar", asks_edit_path(:id => ask.id) %></td>
+          <td><%= link_to "Eliminar", asks_delete_path(:id => ask.id), method: :get %></td>
+        <% else %>
+          <td><span class="badge text-bg-success"><%= ask.estado %></span></td>
+          <td><%= link_to 'Iniciar conversación', new_conversacione_path %></td>
+        <% end %>
+      </tr>
+      <% end %>
+    <% else %>
+      <% Ask.all.each do |ask| %>
+      <tr>
+        <th scope="row"><%= ask.car.marca + " " + ask.car.modelo %></th>
+        <td><%= ask.car.año %></td>
+        <td><%= ask.name %></td>
+        <td><%= ask.mail %></td>
+        <td><%= ask.dates %></td>
+        <td><%= ask.reason %></td>
+        <% if ask.estado == 'PENDIENTE' %>
+          <td><span class="badge text-bg-warning"><%= ask.estado %></span></td>
+          <td><%= link_to "Editar", asks_edit_path(:id => ask.id) %></td>
+          <td><%= link_to "Eliminar", asks_delete_path(:id => ask.id), method: :get %></td>
+        <% elsif ask.estado == 'RECHAZADO' %>
+          <td><span class="badge text-bg-danger"><%= ask.estado %></span></td>
+          <td><%= link_to "Editar", asks_edit_path(:id => ask.id) %></td>
+          <td><%= link_to "Eliminar", asks_delete_path(:id => ask.id), method: :get %></td>
+        <% else %>
+          <td><span class="badge text-bg-success"><%= ask.estado %></span></td>
+          <td><%= link_to 'Iniciar conversación', new_conversacione_path %></td>
+        <% end %>
+      </tr>
+    <% end %>
+    <% end %>
+</div>
+<div class="position-absolute bottom-0 start-50 translate-middle-x">
+<%= button_to "Volver", root_path, :class => "btn btn-outline-secondary", :method => :get %>
+<br><br><br>
+</div>

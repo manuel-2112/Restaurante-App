@@ -1,0 +1,39 @@
+<head>
+  <link rel="stylesheet" href="register_style.css">
+  <script src="https://kit.fontawesome.com/c497ad14fd.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body class="letra">
+  <div class="formulario">
+    <br>
+    <h2 align="center">Publicar un ingrediente</h2>
+
+    <%= form_with(model: @car, method: :post) do |c| %>
+        <div class="username">
+          <%= c.text_field :marca %>
+          <label>Ingrediente</label>
+        </div>
+        <div class="username">
+          <%= c.text_field :modelo %>
+          <label>Ubicación (Localidad / Comuna)</label>
+        </div>
+        <div class="username">
+          <%= c.text_field :año %>
+          <label>Cantidad disponible (kg)</label>
+        </div>
+        <div class="username">
+          <%= c.text_field :precio %>
+          <label>Precio por kg</label>
+        </div>
+        <div class="username">
+          <%= c.text_field :dueño %>
+          <label>Nombre Proveedor</label>
+        </div>
+        <div class="actions">
+          <%= c.submit 'Hacer Publicacion' %>
+        </div>
+        <br>
+    <% end %>
+  </div>
+</body>

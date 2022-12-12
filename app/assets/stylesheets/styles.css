@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: white;
+    width: 100%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+}
+
+.navbar ul li::before {
+    content: "";
+    height: 3px;
+    width: 0%;
+    background: #7FB77E;
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    transition: 0.4s ease-out;
+}
+
+.navbar ul li:hover::before {
+    width: 100%;
+}
+
+
+
+.letra {
+    font-family: 'Raleway', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.hero {
+    background: #7FB77E;
+    width: 100%;
+    height: 650px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+.textos-hero{
+    height: 500px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textos-hero h1 {
+    font-size: 60px;
+}
+
+.textos-hero p {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.textos-hero a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 15px;
+    background: #42855B;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.svg-hero {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.contenedor,
+.wave-contenedor {
+    width: 90%;
+    max-width: 1000px;
+    overflow: hidden;
+    margin: auto;
+    padding: 0 0 80px 0;
+}
+
+.contenedor {
+    padding: 80px 0;
+}
+
+.titulo {
+    font-weight: 300;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.titulo.left {
+    text-align: left;
+}
+
+.titulo.right {
+    text-align: right;
+}
+
+.website {
+    display: flex;
+    justify-content: space-between;
+}
+
+.website img {
+    width: 70%;
+}
+
+.website .contenedor.textos-main {
+    width: 40%;
+}
+
+.parrafo {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.cta {
+    display: inline-block;
+    text-decoration: none;
+    background: #42855B;
+    padding: 12px 15px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.info {
+    background: #7FB77E;
+    color: #fff;
+}
+
+.info-last {
+    background: #7FB77E;
+}
+
+.content-cards {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 90%;
+    text-align: center;
+    height: 300px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+    transform: scale(1);
+    transition: transform 0.6s;
+}
+
+.card:hover {
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.card i {
+    margin: 30px 0 20px 0;
+    color: #7FB77E;
+    font-size: 50px;
+}
+
+.card p {
+    font-weight: 300;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.content-cards-cars {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.card-car {
+    background: white;
+    width: 20%;
+    text-align: center;
+    height: 350px;
+    font-family: "Raleway", sans-serif;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+    transform: scale(1);
+    transition: transform 0.6s;
+}
+
+.card-car:hover {
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.imagen {
+    width: 160px;
+    height: 160px;
+}
+
+.arreglo {
+    text-decoration: none;
+    color: #000;
+}
+
+button {
+    cursor: pointer;
+}
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  
+  .row {margin: 0 -5px;}
+  
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }

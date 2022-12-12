@@ -1,0 +1,49 @@
+<div class="container">
+<table class="table">
+  <tbody class="table-group-divider">
+    <tr>
+    <th>Nombre Restaurant:</th>
+    <td><%= @ask.name %></td>
+  </tr>
+    <tr>
+    <th>Dirección despacho:</th>
+    <td><%= @ask.mail %></td>
+  </tr>
+
+  <tr>
+    <th>Cantidad de kg por despacho:</th>
+    <td><%= @ask.dates %> kg</td>
+  </tr>
+
+  <tr>
+    <th>Intervalo de días de despacho:</th>
+    <td><%= @ask.reason %> días</td>
+  </tr>
+</table>
+
+    <% if current_user.asks.ids.include? @ask.id %>
+      <table class="table">
+        <tbody class="table-group-divider">
+        <tr>
+          <th>Estado:</th>
+          <% if @ask.estado == 'PENDIENTE' %>
+          <td><span class="badge text-bg-warning"><%= @ask.estado %></span></td>
+        <% elsif @ask.estado == 'RECHAZADO' %>
+          <td><span class="badge text-bg-danger"><%= @ask.estado %></span></td>
+        <% else %>
+          <td><span class="badge text-bg-success"><%= @ask.estado %></span></td>
+        <% end %>
+        <tr>
+          <% if @ask.estado == 'ACEPTADO' %>
+        </tr>
+          <td><%= link_to "Iniciar Conversacion", new_conversacione_path %></td>
+        <% end %>
+      </table>
+    <% else %>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <%= button_to "Aceptar Solicitud", aceptado_ask_path(@ask), :class =>"btn btn-outline-success",method: :post %>
+        <%= button_to "Rechazar Solicitud", rechazado_ask_path(@ask), :class =>"btn btn-outline-danger", method: :delete %>
+    </div>    
+    <% end %>
+  </div>
+  

@@ -1,0 +1,26 @@
+<div class="form-register">
+  <h5 class="letras">Sign Up</h5>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "users/shared/error_messages", resource: resource %>
+    <div class="field">
+      <%= f.text_field :name, class: "controls", placeholder: "Usuario" %>
+    </div>
+    <div class="field">
+      <%= f.email_field :email, autocomplete: "email", class:"controls", placeholder: "Email" %>
+    </div>
+    <div class="field">
+      <% if @minimum_password_length %>
+      <% end %>
+      <%= f.password_field :password, autocomplete: "new-password", class: "controls", placeholder: "Contraseña" %>
+    </div>
+    <div class="field">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "controls", placeholder: "Confirmar Contraseña" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Sign up", class: "buttons" %>
+    </div>
+  <% end %>
+  <%= render "users/shared/links" %>
+</div>
+
+

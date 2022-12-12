@@ -1,0 +1,30 @@
+<head>
+    <link rel="stylesheet" href="register_style.css">
+    <script src="https://kit.fontawesome.com/c497ad14fd.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body class="letra">
+<div class="formulario">
+<br>
+<h2 align="center">Nueva Conversacion</h2>
+
+    <%= form_tag conversaciones_path, method: :post do %>
+        <div>
+            <label>Para:&nbsp;&nbsp;<i class="fa-regular fa-user"></i></label>
+            <%= select_tag :user_id, options_from_collection_for_select(@usuarios, :id, :name) %>
+        </div>
+
+        <div class="username">
+            <%= text_field_tag :subject, nil, placeholder: "Asunto" %>
+        </div>
+
+        <div class="username">
+            <%= text_area_tag :body, nil, placeholder: "Deje un comentario" %>
+        </div>
+
+        <%= submit_tag %>
+    <% end %>
+    <br>
+</div>
+</body>

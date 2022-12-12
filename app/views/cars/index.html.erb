@@ -1,0 +1,68 @@
+<h1 align='center' class="letra">Ingredientes</h1>
+
+<% notice %>
+<br>
+
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="row row-cols-1 row-cols-md-5 g-4">
+  <% @car.each do |car| %>
+  <div class="col">
+    <div class="card h-100">
+      <% if car.marca.downcase.include? "ajo" %>
+        <img src="<%= asset_path 'ajo.png' %>" class="card-img-top" width="50" height="auto">
+      <% elsif car.marca.downcase.include? "atun" %>
+        <img src="<%= asset_path 'atun.png' %>" class="card-img-top" width="50" height="auto">
+      <% elsif car.marca.downcase.include? "brocoli" %>
+        <img src="<%= asset_path 'brocoli.png' %>" class="card-img-top" width="50" height="auto">
+      <% elsif car.marca.downcase.include? "cebolla" %>
+        <img src="<%= asset_path 'cebolla.png' %>" class="card-img-top" width="50" height="auto">
+      <% elsif car.marca.downcase.include? "huevo" %>
+        <img src="<%= asset_path 'huevo.png' %>" class="card-img-top" width="50" height="auto">
+      <% elsif car.marca.downcase.include? "lechuga" %>
+        <img src="<%= asset_path 'lechuga.png' %>" class="card-img-top" width="50" height="auto">
+      <% elsif car.marca.downcase.include? "limon" %>
+        <img src="<%= asset_path 'limon.png' %>" class="card-img-top" width="50" height="auto">
+      <% elsif car.marca.downcase.include? "palta" %>
+        <img src="<%= asset_path 'palta.png' %>" class="card-img-top" width="50" height="auto">
+      <% elsif car.marca.downcase.include? "pimenton" %>
+        <img src="<%= asset_path 'pimenton.png' %>" class="card-img-top" width="50" height="auto">
+      <% elsif car.marca.downcase.include? "rabano" %>
+        <img src="<%= asset_path 'rabano.png' %>" class="card-img-top" width="50" height="auto">
+      <% elsif car.marca.downcase.include? "salmon" %>
+        <img src="<%= asset_path 'salmon.png' %>" class="card-img-top" width="50" height="auto">
+      <% elsif car.marca.downcase.include? "tomate" %>
+        <img src="<%= asset_path 'tomate.png' %>" class="card-img-top" width="50" height="auto">
+      <% elsif car.marca.downcase.include? "zanahoria" %>
+        <img src="<%= asset_path 'zanahoria.png' %>" class="card-img-top" width="50" height="auto">
+      <% else %>
+        <img src="<%= asset_path 'default.png' %>" class="card-img-top" width="50" height="auto">
+      <% end %>
+      <div class="card-body">
+        <% if user_signed_in?%>
+          <% if car.user_id == current_user.id %>
+            <h5 class="card-title"> <span class="badge bg-success">Tu Publicación</span> <br><br><%= car.marca %> </h5>
+          <% else %>
+            <h5 class="card-title"> <br><%= car.marca %> </h5>
+          <% end %>
+        <% else %>
+          <h5 class="card-title"> <br><%= car.marca %> </h5>
+        <% end %>
+        <p class="card-text">Ubicación: <%= car.modelo %></p>
+        <p class="card-text">Precio por kg: $<%= car.precio %></p>
+        <p class="card-text">Cantidad disponible (kg): <%= car.año %></p>
+        <% if current_user %>
+          <p> <%= link_to "Detalles", car_path(car), class: "cta" %> </p>
+        <% else %>
+          <p> <%= link_to "Detalles", user_session_path, class: "cta" %> </p>
+        <% end %>
+        <p class="card-text"><small class="text-muted">Actualizado en: <%= car.updated_at.strftime('%d/%m/%Y %I:%M') %></small></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+</body>

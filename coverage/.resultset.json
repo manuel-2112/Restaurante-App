@@ -1,0 +1,542 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/models/user.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/helpers/application_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/helpers/asks_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/helpers/cars_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/helpers/comentario_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/helpers/conversaciones_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/helpers/home_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/helpers/main_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/helpers/mensajes_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/helpers/reviews_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/channels/application_cable/channel.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/channels/application_cable/connection.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/controllers/cars_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/controllers/users/registrations_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/jobs/application_job.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/mailers/application_mailer.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/models/ask.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/models/car.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/models/review.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/controllers/asks_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/controllers/comentario_controller.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/controllers/conversaciones_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/controllers/home_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/controllers/main_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/controllers/mensajes_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/controllers/reviews_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/models/comentario.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/mnt/c/Users/mespi/Repositorios/IIC2143/Proyecto IIC2143/Sprint 3/2022-2-grupo-09/app/models/mensaje.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1668426437
+  }
+}

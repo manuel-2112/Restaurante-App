@@ -1,0 +1,93 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="letra">
+  <header class="hero">
+    <div class="textos-hero">
+      <h1>Bienvenido a Proveedores UC</h1>
+      <p>Creamos el mejor portal de proveedores para tu restaurant</p>
+      <a href="#servicios">Nuestros Servicios</a>
+    </div>
+    <div class="svg-hero" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+  </header>
+  <section class="wave-contenedor website">
+    <img src="<%= asset_path 'mockup.png' %>">
+    <div class="contenedor-textos-main">
+      <h2 class="titulo left">Esta es TÚ oportunidad. Todos los ingredientes que necesitas a tan solo 3 clics de distancia.</h2>
+    </div>
+  </section>
+  <section class="info">
+    <div class="contenedor">
+      <h2 class="titulo left"></h2>
+      <p></p>
+    </div>
+  </section>
+  <section id="servicios" class="cards contenedor">
+    <h2 class="titulo">Nuestros Servicios</h2>
+    <div class="content-cards">
+
+      <% if (not current_user or current_user.admin == true or current_user.role == 'Proveedor') %>
+      <article class="card">
+        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+        <h3>Publicar Ingredientes</h3>
+        <% if current_user %>
+          <% if (current_user.role == 'Proveedor' or current_user.admin == true) %>
+            <p> <%= link_to "Hacer Publicación", new_car_path, class: "cta" %> </p>
+          <% else %>
+            <p> <%= link_to "Hacer Publicación", root_path, class: "cta" %> </p>
+          <% end %>
+        
+        <% else %>
+          <p> <%= link_to "Hacer Publicación", new_user_session_path, class: "cta" %> </p>
+        <% end %>
+      </article>
+      <% end %>
+
+      <article class="card">
+        <i class="fa-solid fa-cutlery"></i>
+        <h3>Ver Ingredientes</h3>
+        <p> <%= link_to "Ver Ingredientes", cars_path, class: "cta" %> </p>
+      </article>
+      
+      <article class="card">
+        <i class="fa-solid fa-inbox"></i>
+        <h3>Ver solicitudes</h3>
+        <% if current_user %>
+          <% if (current_user.role == 'Proveedor' or current_user.admin == true) %>
+            <p> <%= link_to "Revisar solicitudes recibidas", "asks/recibidas", class: "cta" %> </p>
+           <% end %>
+          <% if (current_user.role == 'Restaurant' or current_user.admin == true) %>
+            <p> <%= link_to "Revisar estado de mis solicitudes", asks_creadas_path, class: "cta" %> </p>
+          <% end %>
+        
+        <% else %>
+          <p> <%= link_to "Revisar mis solicitudes", new_user_session_path, class: "cta" %> </p>
+        <% end %>
+      </article>
+      
+      <article class="card">
+        <i class="fa-regular fa-message"></i>
+        <h3>Chats</h3>
+        <% if current_user %>
+          <p> <%= link_to "Ver Mensajes", conversaciones_path, class: "cta" %> </p>
+        <% else %>
+          <p> <%= link_to "Ver Mensajes", new_user_session_path, class: "cta" %> </p>
+        <% end %>
+      </article>
+    </div>
+  </section>
+  <div class="svg-wave" style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #7FB77E;"></path></svg></div>
+  <section class="info">
+    <div class="contenedor">
+        <h2 class="titulo left"></h2>
+        <p class="parrafo"></p>
+        <a href="#" class="cta">Volver al inicio</a>
+    </div>
+    
+  </section>
+  <footer id="contacto">
+  </footer>
+  <script src="https://kit.fontawesome.com/c497ad14fd.js" crossorigin="anonymous"></script>
+</body>

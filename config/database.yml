@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encodinng: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV["DB_USER"] %>
+  password: <%= ENV["DB_PASSWORD"] %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: grupo_09_development
+
+test:
+  <<: *default
+  database: grupo_09_test
+
+production:
+  <<: *default
+  database: db/production.sqlite3
+  url: <%= ENV["DATABASE_URL"] %>

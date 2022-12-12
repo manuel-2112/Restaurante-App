@@ -1,0 +1,39 @@
+<head>
+  <link rel="stylesheet" href="register_style.css">
+  <script src="https://kit.fontawesome.com/c497ad14fd.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body class="letra">
+  <div class="formulario">
+    <br>
+    <h2 align="center">Indicaciones</h2>
+
+    <%= form_with(model: @comentario, method: :post) do |c| %>
+        <div class="username">
+          <%= c.text_field :numero %>
+          <label>Número</label>
+        </div>
+        <div class="username">
+          <%= c.text_field :direccion %>
+          <label>Dirección</label>
+        </div>
+        <div class="username">
+          <%= c.text_field :dia %>
+          <label>Día</label>
+        </div>
+        <div class="username">
+          <%= c.text_field :hora %>
+          <label>Hora</label>
+        </div>
+        <div class="username">
+          <%= c.text_field :indicacion %>
+          <label>Indición</label>
+        </div>
+        <div class="actions">
+          <%= c.submit 'Coordinar arriendo' %>
+        </div>
+        <br>
+    <% end %>
+  </div>
+</body>
